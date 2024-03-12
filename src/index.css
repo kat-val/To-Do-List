@@ -40,7 +40,7 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-h1, h2 {
+h1, h2, h3, h4 {
   text-wrap: balance;
 }
 p {
@@ -71,4 +71,24 @@ p {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
+}
+
+
+/* ------------ CHECKMARK ------------ */
+input[type="checkbox"]:checked ~ .checkmark {
+  /* background-color: #737373; */
+  background-color: #a78bfa;
+}
+input[type="checkbox"]:checked ~ .checkmark:after {
+  display: block;
+  left: 9px;
+  bottom: 5px;
+  /* top: 3px; */
+  width: 6px;
+  height: 16px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
 }
