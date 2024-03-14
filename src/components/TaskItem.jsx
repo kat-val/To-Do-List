@@ -1,9 +1,11 @@
 import { useState } from "react";
+// import PropTypes from "prop-types";
 
-export const TaskItem = () => {
+export const TaskItem = ({condicion}) => {
    const [toggleClass, setToggleClass]= useState(false);
    const [viewIcons, setViewIcons]= useState(false);
    const [checkElement,setCheckElement]= useState(false);
+   
    
    const activateIconsEdit =()=>{
       setViewIcons(!viewIcons);
@@ -12,14 +14,20 @@ export const TaskItem = () => {
    const checkItem = ()=>{
       setCheckElement(!checkElement);
    }
+   
+   // TaskItem.propTypes = {
+   //    checked: PropTypes.node.isRequired,
+   // };
 
    let title = "Check Box";
-   let description = "Ipsum perferendis officiis velit nihil accusantium, tempora et? Ab, dolores officiis.  🔥";
+   let description = "Ipsum perferendis officiis velit nihil accusantium, tempora et? 🔥";
+
+   console.log(condicion)
 
    return (
       <>
-         {checkElement ?
-            <div id="##" className='flex flex-col gap-5'>
+         {checkElement || condicion ?
+            <div className='flex flex-col gap-5'>
                <div className="flex items-center gap-4">
                   <label className='relative flex flex-1 px-5 py-4 rounded-lg outline outline-1 bg-gradient-to-br from-neutral-800 outline-neutral-700'>
                      <div className="flex flex-col gap-1 ml-4 pl-5 text-neutral-500 line-through">
@@ -36,7 +44,7 @@ export const TaskItem = () => {
                </div>
             </div>
             :
-            <div id="##" className='flex flex-col gap-5'>
+            <div className='flex flex-col gap-5'>
                <div className="flex items-center gap-4">
                   <label className='relative flex flex-1 px-5 py-4 rounded-lg outline outline-1 bg-neutral-700  gap-5 outline-neutral-600'>
                      <div className="flex flex-col gap-1 ml-4 pl-5">

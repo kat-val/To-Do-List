@@ -1,6 +1,8 @@
 import { TaskItem } from "./TaskItem"
 
 export const TaskList = () => {
+   const componenteCheckeado = false;
+
    return (
       <>
          <main className='p-4 flex flex-col gap-10'>
@@ -9,7 +11,10 @@ export const TaskList = () => {
                   <h2 className='text-lg poppins-regular'>Lista de tareas</h2>
                   <span className="border-b border-neutral-700"></span>
                </div>
-               <TaskItem/>
+
+               {!componenteCheckeado &&
+                  <TaskItem condicion={false}/>}
+
             </section>
 
 
@@ -18,7 +23,10 @@ export const TaskList = () => {
                   <h2 className='text-lg poppins-regular'>Terminadas</h2>
                   <span className="border-b border-neutral-700"></span>
                </div>
-               <TaskItem/>
+
+               {componenteCheckeado &&
+                  <TaskItem condicion={true}/>}
+                  
             </section>
 			</main>
       </>
@@ -72,3 +80,29 @@ export const TaskList = () => {
 // 		</div>
 // 	</div>
 // )}
+
+// ### UseEffect
+// ```jsx
+// import { useEffect } from 'react'
+
+// useEffect(() => {
+// 	// codigo a ejecutar...
+// }, [])
+// ```
+
+// **Ejemplo en . /App.jsx**
+
+// ```jsx
+// import { useEffect } from 'react';
+
+// const User = ({ userName }) => {
+// 	useEffect(() => {
+// 		document.title = `Hello ${userName}`;
+// 	}, [userName]);
+// 	// ejecuta cada vez que userName cambie.
+
+// 	return <h1>{userName}</h1>;
+// }
+// ```
+
+// Se va ejecutar al menos una vez y cada vez que se renderice la dependencia que le especifiquemos en las llaves[ ], si no le especificamos este va ejecutar con cada click.
