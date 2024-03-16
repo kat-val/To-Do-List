@@ -13,20 +13,15 @@ export const TaskItem = ({condicion}) => {
    }
    const checkItem = ()=>{
       setCheckElement(!checkElement);
+      condicion(!checkElement);
    }
-   
-   // TaskItem.propTypes = {
-   //    checked: PropTypes.node.isRequired,
-   // };
 
    let title = "Check Box";
    let description = "Ipsum perferendis officiis velit nihil accusantium, tempora et? 🔥";
 
-   console.log(condicion)
-
    return (
       <>
-         {checkElement || condicion ?
+         {checkElement ?
             <div className='flex flex-col gap-5'>
                <div className="flex items-center gap-4">
                   <label className='relative flex flex-1 px-5 py-4 rounded-lg outline outline-1 bg-gradient-to-br from-neutral-800 outline-neutral-700'>
