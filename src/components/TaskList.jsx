@@ -25,10 +25,6 @@ export const TaskList = () => {
       setInputTask("");
    }
 
-   // let title = "Terminar proyecto To-Do-List";
-   // let description = "¿Se podrá terminar con esta tortura? El bagre no se rinde 🔥";
-   // let description = "Ipsum perferendis officiis velit nihil accusantium, tempora et? 🔥";
-
    return (
       <>
          <main className='p-4 flex flex-col gap-10'>
