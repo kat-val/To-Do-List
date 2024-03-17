@@ -8,7 +8,6 @@ export const TaskList = () => {
    const [viewIcons, setViewIcons]= useState(false);
    const [checkElement,setCheckElement]= useState(false);
    
-   
    const activateIconsEdit =()=>{
       setViewIcons(!viewIcons);
       setToggleClass(!toggleClass);
