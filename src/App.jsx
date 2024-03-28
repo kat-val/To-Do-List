@@ -1,10 +1,21 @@
+import { TaskForm } from "./components/TaskForm"
 import { TaskList } from "./components/TaskList"
 
 function App() {
 
 	return (
 		<>
-			<TaskList/>
+			<main className='p-4 flex flex-col gap-10'>
+				<section className="flex flex-col gap-7">
+					<div className="flex flex-col gap-4">
+						<h2 className='text-lg poppins-regular'>Lista de tareas</h2>
+						<span className="border-b border-neutral-700"></span>
+					</div>
+
+					<TaskForm />
+					<TaskList/>
+				</section>
+			</main>
 		</>
 	)
 }
